@@ -6,25 +6,112 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Forms</title>
       <link rel="stylesheet" href="style.css" />
+      <script src="app.js" defer></script>
    </head>
    <body>
-      <main class="main-content">
-         <h1>Forms</h1>
+      <form id="email-collector" action="#" method="post">
+         <fieldset id="main-content" class="main-content">
+            <legend>Forms 101</legend>
+            <h1>Forms</h1>
 
-         <p>
-            Register Today to receive my newsletter <br />
-            every god damn week
-         </p>
-         <form id="email-collector" action="#" method="post">
-            <input type="text" name="fName" placeholder="First name" required />
-            <input type="text" name="lName" placeholder="Last name" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="number" name="phone" placeholder="Number" />
-            <button class="btn main-btn" type="submit">Register</button>
-         </form>
-         <p class="fine-print">
-            We will never share your information with anyone!!!
-         </p>
-      </main>
+            <p>
+               Register Today to receive my newsletter <br />
+               every god damn week
+            </p>
+
+            <!-- ! The checkbox input type can be used with javascript to toggle different content on click, for example changing the layout or the language of a page -->
+            <!-- ! The name attribute is used to reference elements in a JavaScript, or to
+         !      reference form data after a form is submitted. 
+         
+         !      Note: Only form elements with a name attribute will have their values passed when submitting a form. -->
+            <div class="checkbox">
+               <input type="checkbox" name="toggle" id="flex-grid" />
+               <!-- ? <input type="radio" name="" id="" /> -->
+               <!-- ? <input type="radio" name="" id="" /> -->
+               <!-- ! The label element represents a caption in the UI  -->
+               <label id="checkbox-label" for="flex-grid">Toggle Grid</label>
+            </div>
+            <div class="main-form">
+               <!-- ! The input element has many different types, the most normal ones are text, email and number, and is used in contact forms where you fill out your information -->
+               <!-- ! The placeholder takes inn placeholder text for the form element -->
+               <!-- ! Required just means that this form element has to be filled out to submit the form -->
+               <div>
+                  <label for="first-name">First Name</label>
+                  <input
+                     type="text"
+                     id="first-name"
+                     name="fName"
+                     placeholder="First name"
+                     required
+                     minlength="2"
+                  />
+               </div>
+               <div>
+                  <label for="last-name">Last Name</label>
+                  <input
+                     id="last-name"
+                     type="text"
+                     name="lName"
+                     placeholder="Last name"
+                     required
+                     minlength="2"
+                  />
+               </div>
+               <div>
+                  <label for="email">Email</label>
+                  <input
+                     type="email"
+                     id="email"
+                     name="email"
+                     placeholder="Email"
+                     required
+                     list="def-emails"
+                  />
+                  <!-- ! We can add a datalist to give default options to fill in to an input -->
+                  <datalist id="def-emails">
+                     <option value="emil.endresen@yahoo.com"></option>
+                     <option value="emil.endresen@msn.com"></option>
+                     <option value="emil.kodehode@gmail.com"></option>
+                  </datalist>
+               </div>
+
+               <!-- ! Input type tel is used for phone numbers and can have a set pattern that the number must be written in -->
+               <div>
+                  <label for="tel">Phone number</label>
+                  <input
+                     type="tel"
+                     id="tel"
+                     name="phone"
+                     pattern="[0-9]{3} [0-9]{2} [0-9]{3}"
+                     placeholder="123 45 678"
+                  />
+               </div>
+
+               <!-- ! <input type="reset" class="reset" /> -->
+               <button class="btn main-btn" type="submit">Register</button>
+               <input type="reset" class="reset-btn" />
+            </div>
+            <!-- 
+            <form>
+            <textarea name="txtarea" id="" cols="30" rows="10" resize="none"></textarea>
+            <input type="range" />
+            <input type="color" name="" id="" />
+            <input type="file" name="" id="" />
+            <input type="password" name="" id="" />
+            <input type="search" name="" id="" />
+            
+            <label for="curs">Choose your car</label>
+            <select name="curs" id="curs">
+               <option value="Nissan">Nissan</option>
+               <option value="Mazda">Mazda</option>
+               <option value="Toyota">Toyota</option>
+               <option value="Honda">Honda</option>
+            </select>
+         </form> -->
+            <p class="fine-print">
+               We will never share your information with anyone!!!
+            </p>
+         </fieldset>
+      </form>
    </body>
 </html>
